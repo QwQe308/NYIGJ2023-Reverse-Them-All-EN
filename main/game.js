@@ -43,7 +43,7 @@ function HTMLupdate(){
 
     if(!player.infinitied) e("infTabButton").style.display = "none"
     else e("infTabButton").style.display = "inline-block"
-    e("infButton").innerHTML = `Big Church and get ${formatWhole(getInfGain())} infinity point<br>Base amount:${player.am.eq(1)?"1(Capped)":"0<br>(Reach 1 AM to get a infinity point)"}`
+    e("infButton").innerHTML = `Big Crunch and get ${formatWhole(getInfGain())} infinity point<br>Base amount:${player.am.eq(1)?"1(Capped)":"0<br>(Reach 1 AM to get a infinity point)"}`
     w("ip",`You have <span style="color:rgb(60,60,0);font-size: 18px;">${format(player.ip)}</span> infinity point<br>You have spent ${format(player.infTime)} seconds in this infinity, and are supposed to get ${format(getInfGain(true))} infinity point`)
 
     //更新iu状态
@@ -69,6 +69,8 @@ function HTMLupdate(){
     if(!hasIU(20)){
         e("ndAuto").style.display = "none"
         e("energy").style.display = "none"
+        e('advancedNdAuto').style.display = "none"
+        e('sacrificeAuto').style.display = "none"
     }
     else{
         if(!hasIU(51)){

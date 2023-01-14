@@ -211,7 +211,7 @@ var iu = {
     },
     53:{
         cost(x = getIULevel(this.id)){return n(1e6).mul(n(5).pow(x))},
-        description(){return `t5.3 - All dimensions get a nerf based on its dimensionality and time..(xth dimensions /${format(this.effect1())}^x)<br>Infinity point*1.8^x(*${format(this.effect2())}).The base of sacrifice multplier +1.Increases t5.4 cap,up to 5.`},
+        description(){return `t5.3 - All dimensions get a nerf based on its dimensionality and time.(xth dimensions /${format(this.effect1())}^x)<br>Infinity point*1.8^x(*${format(this.effect2())}).The base of sacrifice multplier +1.Increases t5.4 cap,up to 5.`},
         effect1(x = getIULevel(this.id).min(this.cap())){
             return n(1.25).pow(x.div(2).add(player.infTime.div(4).add(10).log10().sub(1)).pow(1.25)).sqrt()
         },
