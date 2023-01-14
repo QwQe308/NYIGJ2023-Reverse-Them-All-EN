@@ -62,7 +62,7 @@ var iu = {
     },
     22:{
         cost(x = getIULevel(this.id)){return n(64).mul(n(2).pow(x))},
-        description(){return `t2.2 - Autobuyer speed -${formatWhole(this.effect1())}s. When dimension autobuyer triggered, Matter dimensions get ${format(this.effect2())}s production.(Dont generate energy)`},
+        description(){return `t2.2 - Autobuyer speed -${formatWhole(this.effect1())}s. When dimension autobuyer is triggered, Matter dimensions get ${format(this.effect2())}s production.(Dont generate energy)`},
         effect1(x = getIULevel(this.id)){
             return x
         },
