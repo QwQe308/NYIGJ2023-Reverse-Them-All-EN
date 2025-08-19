@@ -175,7 +175,7 @@ var iu = {
     },
     44:{
         cost(x = getIULevel(this.id)){return n(16384).mul(n(4).pow(x))},
-        description(){return `t4-4 - Based on the geometric average of all the dimensions, any /2^x^1.25(/${format(this.effect1())}).<br>Infinity point*1.75^x.(*${format(this.effect2())})`},
+        description(){return `t4-4 - If a MD multplier is higher than the geometric average of all MD multpliers, it will /2^x^1.25(/${format(this.effect1())}).<br>Infinity point*1.75^x.(*${format(this.effect2())})`},
         effect1(x = getIULevel(this.id)){
             return n(2).pow(x.pow(1.25))
         },
@@ -397,4 +397,5 @@ function getInfGain(force){
     if(hasIU(62)) gain = gain.mul(1.75)
     if(hasIU(64)) gain = gain.mul(getIUEffect(54,2))
     return gain.floor()
+
 }
