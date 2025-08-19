@@ -28,9 +28,9 @@
 
     <!-- ND -->
     <div id = "dimTab" style="display:block">
-        <div id="ndAuto">Auto buy dimensions that cost less than or equal to<input id="ndAutoInput" style="width: 80px;"></input>matter. (From highest dimensions to lowest dimensions) Autobuyer speed:<span id="ndAutoCD"></span></div>
-        <div id="advancedNdAuto">Auto buy dimensions that cost less than or equal to <input id="advancedNdAutoInput" style="width: 80px;"></input> times amount of antimatter. (From highest dimensions to lowest dimensions) Autobuyer speed:<span id="advancedNdAutoCD"></span></div>
-        <div id="sacrificeAuto">Auto sacrifice when you can sacrifice <input id="sacrificeAutoCD" style="width: 80px;"></input> 8th dimensions.This infinity will stop sacrifice after <input id="sacrificeAutoMax" style="width: 80px;"></input> seconds.</div>
+        <div id="ndAuto">Auto buy dimensions that cost less than or equal to<input id="ndAutoInput" style="width: 80px;"></input>matter. (From highest dimension to lowest dimension) Autobuyer interval:<span id="ndAutoCD"></span></div>
+        <div id="advancedNdAuto">Auto buy dimensions that cost less than or equal to <input id="advancedNdAutoInput" style="width: 80px;"></input> times amount of current antimatter. (From highest dimensions to lowest dimensions) Autobuyer interval:<span id="advancedNdAutoCD"></span></div>
+        <div id="sacrificeAuto">Auto sacrifice when you can sacrifice <input id="sacrificeAutoCD" style="width: 80px;"></input> more 8th dimensions. It will stop sacrifice after <input id="sacrificeAutoMax" style="width: 80px;"></input> seconds this Infinity.</div>
         <div id="energy"></div>
         <div id="iu44Info"></div>
         <div id = "nd" class="dim"></div><br>
@@ -44,9 +44,10 @@
 
     <!-- inf -->
     <div id = "infTab" style="display:none;">
-        Shift+click can downgrade an upgrade.Buying upgrade or downgrading upgrade will reset this infinity.<br>
+        Shift+click can downgrade an upgrade (and rufund its cost). Buying upgrade or downgrading upgrade will reset this infinity.<br>
         <div id="downgradeInfo" style="color: red;"></div>
         <button id="switchShift" onclick="shift=!shift">Toggle shift</button>
         <div id="iuTable"></div>
     </div>
+
 </body>
