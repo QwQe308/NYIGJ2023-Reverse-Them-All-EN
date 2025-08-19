@@ -89,7 +89,7 @@ function HTMLupdate(){
     }
     w("ndAutoCD",` ${format(ndAutoCDTicker,1)}s/${format(getNDAutoCD(),1)}s`)
     w("advancedNdAutoCD",` ${format(ndAutoCDTicker,1)}s/${format(getNDAutoCD(),1)}s`)
-    w("energy",`You have ${format(player.energy,1)} energy(+${format(getENGain().div(diff))}/s, based on antimatter that annihilated) ,which make all matter dimension cost ${format(getENEffect())} times less.`)
+    w("energy",`You have ${format(player.energy,1)} energy(+${format(getENGain().div(diff))}/s, based on antimatter annihilated) ,which make all matter dimension cost ${format(getENEffect())} times less.`)
     //更新献祭按钮状态
     if(hasIU(50)){
         e(`sacrifice`).style.visibility = 'visible'
@@ -184,4 +184,5 @@ function disableHotkey(){
     }
 }
 document.onkeydown = hotkey;
+
 document.onkeyup = disableHotkey;
