@@ -62,7 +62,7 @@ var iu = {
     },
     22:{
         cost(x = getIULevel(this.id)){return n(64).mul(n(2).pow(x))},
-        description(){return `t2.2 - Autobuyer speed -${formatWhole(this.effect1())}s. When dimension autobuyer is triggered, Matter dimensions get ${format(this.effect2())}s production.(Dont generate energy)`},
+        description(){return `t2.2 - Autobuyer speed -${formatWhole(this.effect1())}s. When dimension autobuyer is triggered, Matter dimensions get ${format(this.effect2())}s of production.(Doesn't generate energy)`},
         effect1(x = getIULevel(this.id)){
             return x
         },
@@ -80,7 +80,7 @@ var iu = {
     },
     24:{
         cost(x = getIULevel(this.id)){return n(128).mul(n(2).pow(x))},
-        description(){return `t2.4 - When antimatter drops to 1, Resets bought matter dimensions, then time will be reversed ${formatWhole(this.effect1())}s(energy is kept, highest dimension amount resets after reverse)<br>Infinity point gain*1.5^x. (Currently: *${format(this.effect2())})`},
+        description(){return `t2.4 - When antimatter drops to 1, Resets bought matter dimensions, then time will be reversed ${formatWhole(this.effect1())}s(energy is not affected, highest dimension's amount resets after reverse)<br>Infinity point gain*1.5^x. (Currently: *${format(this.effect2())})`},
         effect1(x = getIULevel(this.id)){
             if(x.eq(0)) return n(0)
             return n(3).pow(x.sub(1)).mul(40)
