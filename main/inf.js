@@ -1,19 +1,19 @@
 var iu = {
     10:{
         cost(x = getIULevel(this.id)){return n(1)},
-        description(){return `t1 - Unlock second dimension but you start with 1000 antimatter on infinity. Unlock new Infinity upgrade and double infinity point gain.`},
+        description(){return `t1 - Unlock second dimension but you start with 1000 antimatter on infinity. Unlock new Infinity upgrades and double infinity point gain.`},
         cap(){return n(1)},
         type:"main",
     },
     11:{
         cost(x = getIULevel(this.id)){return n(2)},
-        description(){return `t1.1 -  Unlock third dimension.`},
+        description(){return `t1.1 -  Unlock the third dimension.`},
         cap(){return n(1)},
         type:"upgrade",
     },
     12:{
         cost(x = getIULevel(this.id)){return two.pow(x.add(1))},
-        description(){return `t1.2 - First dimension multiplier is divided by (x+1)^(x+1) (Currently: /${format(this.effect1())})<br>IP*1.5^x. (Currently: *${format(this.effect2())}).`},
+        description(){return `t1.2 - First dimension's multiplier is divided by (x+1)^(x+1) (Currently: /${format(this.effect1())})<br>IP*1.5^x. (Currently: *${format(this.effect2())}).`},
         effect1(x = getIULevel(this.id)){//一维减益
             return x.add(1).pow(x.add(1))
         },
@@ -28,7 +28,7 @@ var iu = {
             if(x.lt(5)) return n(3).pow(x.add(1))
             return n(4).pow(x.add(3))
         },
-        description(){return `t1.3 - Infinity point boost first dimension.<br>Currently: *${format(this.effect())}`},
+        description(){return `t1.3 - Infinity points boost first dimension.<br>Currently: *${format(this.effect())}`},
         effect(x = getIULevel(this.id)){
             return player.ip.add(1).pow(x.pow(x.div(100).add(1)).mul(1.25).add(1).log10())
         },
@@ -37,7 +37,7 @@ var iu = {
     },
     14:{
         cost(x = getIULevel(this.id)){return n(16)},
-        description(){return `t1.4 - All dimensions cost is multiplied by first dimension multiplier. Infinity point gain *1.5.`},
+        description(){return `t1.4 - All dimensions' cost is multiplied by first dimension's multiplier. Infinity point gain *1.5.`},
         effect(x = getIULevel(this.id)){
             if(tmpNDmult[1].lte(0)) return n("1.8e308")
             return tmpNDmult[1]
@@ -47,7 +47,7 @@ var iu = {
     },
     20:{
         cost(x = getIULevel(this.id)){return n(64)},
-        description(){return `t2 - Unlock auto dimension(Speed:5s).Dimensions bought/5 boost infinity point gain.(Currently: *${format(this.effect())}) And unlock energy.`},
+        description(){return `t2 - Unlock Dimension Autobuyer(Interval:5s). (Dimensions bought)/5 multplies infinity points gain.(Currently: *${format(this.effect())}) And unlock energy.`},
         effect(x = getIULevel(this.id)){
             return getTotalBoughtND().div(5)
         },
@@ -56,7 +56,7 @@ var iu = {
     },
     21:{
         cost(x = getIULevel(this.id)){return n(64)},
-        description(){return `t2.1 - Auto infinity when you can infinity when dimension autobuyer triggered.`},
+        description(){return `t2.1 - Auto infinity if available on dimension autobuyer's trigger.`},
         cap(){return n(1)},
         type:"upgrade",
     },
@@ -74,7 +74,7 @@ var iu = {
     },
     23:{
         cost(x = getIULevel(this.id)){return n(128)},
-        description(){return `t2.3 - Unlock fourth dimension but you start with 1e5 antimatter on infinity.`},
+        description(){return `t2.3 - Unlock the fourth dimension but you start with 1e5 antimatter on infinity.`},
         cap(){return n(1)},
         type:"challenge",
     },
@@ -93,7 +93,7 @@ var iu = {
     },
     30:{
         cost(x = getIULevel(this.id)){return n(1024)},
-        description(){return `t3 - cbrt(t1.3 effect) (*${format(this.effect1())}) boost second dimension.Infinity point amount boost antimatter gain on start.(*(x+1) = *${format(this.effect2())}).IP gain increases over 40 seconds.(*(t/20) = *${format(this.effect3())}) Energy effect^0.8.`},
+        description(){return `t3 - cbrt(t1.3 effect) (*${format(this.effect1())}) boost second dimension. Infinity point amount boost antimatter gain on start.(*(x+1) = *${format(this.effect2())}). IP gain increases over 40 seconds. (*(t/20) = *${format(this.effect3())}) Energy effect^0.8.`},
         effect1(x = getIULevel(this.id)){
             return getIUEffect(13).root(3)
         },
@@ -115,19 +115,19 @@ var iu = {
     },
     32:{
         cost(x = getIULevel(this.id)){return n(1024)},
-        description(){return `t3.2 - Unlock fifth dimension but infinity point gain is divided by 1.25.`},
+        description(){return `t3.2 - Unlock the fifth dimension but infinity point gain is divided by 1.25.`},
         cap(){return n(1)},
         type:"upgrade",
     },
     33:{
         cost(x = getIULevel(this.id)){return n(2048)},
-        description(){return `t3.3 - First dimension cost increase is 5x higher. Infinity point*1.8.`},
+        description(){return `t3.3 - First dimension's cost multplier is 5x higher. Infinity point*1.8.`},
         cap(){return n(1)},
         type:"challenge",
     },
     34:{
         cost(x = getIULevel(this.id)){return n(2048).mul(n(2).pow(x))},
-        description(){return `t3.4 - The closer matter/s to antimatter/s,The lower 2nd dimension's mult is (/${format(this.effect1())}).Infinity point*1.5^x.(*${format(this.effect2())})`},
+        description(){return `t3.4 - The closer matter/s to antimatter/s is, The lower 2nd dimension's mult is (/${format(this.effect1())}). Infinity point*1.5^x.(*${format(this.effect2())})`},
         effect1(x = getIULevel(this.id)){
             return getNDproc(1).max(10).log10().mul(x.div(2).add(1.5)).div(player.am.add(9).log10()).pow(x.mul(1.75).add(1.5)).max(1)
         },
@@ -160,13 +160,13 @@ var iu = {
     },
     42:{
         cost(x = getIULevel(this.id)){return n(4096).mul(n(4).pow(x))},
-        description(){return `t4-2 - Second matter dimension generate antimatter. Infinity point*1.5.`},
+        description(){return `t4-2 - Second matter dimension generates antimatter. Infinity point*1.5.`},
         cap(){return n(1)},
         type:"challenge",
     },
     43:{
         cost(x = getIULevel(this.id)){return n(8192).mul(n(2).pow(x))},
-        description(){return `t4-3 - Every level will unlock a new dimension,<br>but antimatter on start*(10^(x+1)^2/10) (*${format(this.effect())}).`},
+        description(){return `t4-3 - Every level will unlock a new dimension,<br>but initial antimatter *(10^(x+1)^2/10) (*${format(this.effect())}).`},
         effect(x = getIULevel(this.id)){
             return n(10).pow(x.add(1).pow(2)).div(10)
         },
@@ -175,7 +175,7 @@ var iu = {
     },
     44:{
         cost(x = getIULevel(this.id)){return n(16384).mul(n(4).pow(x))},
-        description(){return `t4-4 - If a MD multplier is higher than the geometric average of all MD multpliers, it will /2^x^1.25(/${format(this.effect1())}).<br>Infinity point*1.75^x.(*${format(this.effect2())})`},
+        description(){return `t4-4 - If a multplier is higher than the geometric average of all multpliers, it will /2^x^1.25(/${format(this.effect1())}).<br>Infinity point*1.75^x.(*${format(this.effect2())})`},
         effect1(x = getIULevel(this.id)){
             return n(2).pow(x.pow(1.25))
         },
@@ -187,19 +187,19 @@ var iu = {
     },
     50:{
         cost(x = getIULevel(this.id)){return n(262144)},
-        description(){return `t5 - Unlock dimension sacifice which boost eighth dimension(5^x).Unlock dimension sacifice autobuyer. But you can only use energy to buy eight dimension and the cost is changed.`},
+        description(){return `t5 - Unlock Dimension Sacifice, which boost the eighth dimension(5^x). Unlock dimension sacifice autobuyer. But you can only use energy to buy eight dimension and the cost is modified.`},
         cap(){return n(1)},
         type:"main",
     },
     51:{
         cost(x = getIULevel(this.id)){return n(262144)},
-        description(){return `t5.1 - Optimize the dimension automator settings, and its speed -0.5s.(go to set it again)`},
+        description(){return `t5.1 - Optimize the dimension automation's settings, and its speed -0.5s.(go to set it again)`},
         cap(){return n(1)},
         type:"upgrade",
     },
     52:{
         cost(x = getIULevel(this.id)){return n(5e5).mul(n(5).pow(x))},
-        description(){return `t5.2 - All bought dimensions mult only changes every ${format(this.effect1())} boughts.e.g. If the effect is 2, buying 2 or 3 times is the same.<br>Infinity point*(x*0.4+1).(*${format(this.effect2())})`},
+        description(){return `t5.2 - All bought dimensions mult only changes every ${format(this.effect1())} boughts. e.g. If the effect is 2, buying 2 or 3 times is the same.<br>Infinity point*(x*0.4+1).(*${format(this.effect2())})`},
         effect1(x = getIULevel(this.id)){
             return x.add(1)
         },
@@ -259,7 +259,7 @@ var iu = {
     },
     63:{
         cost(x = getIULevel(this.id)){return n(6666666).mul(n(3).pow(x))},
-        description(){return `t6.3 - Infinity point boost energy gain.(*${format(this.effect())})`},
+        description(){return `t6.3 - Infinity points boost energy gain.(*${format(this.effect())})`},
         effect(x = getIULevel(this.id)){
             return player.ip.div(1e4).add(1).pow(x.div(1.33).add(1).log10().mul(2))
         },
@@ -268,7 +268,7 @@ var iu = {
     },
     64:{
         cost(x = getIULevel(this.id)){return n(1e7).mul(n(4).pow(x))},
-        description(){return `t6.4 - Antimatter increases on sacrifice.(*${format(this.effect1())})<br>Infinity point*1.6^x.(*${format(this.effect2())})`},
+        description(){return `t6.4 - Antimatter is multplied on sacrifice.(*${format(this.effect1())})<br>Infinity point*1.6^x.(*${format(this.effect2())})`},
         effect1(x = getIULevel(this.id)){
             return n(100).pow(x.pow(1.25))
         },
@@ -399,3 +399,4 @@ function getInfGain(force){
     return gain.floor()
 
 }
+
